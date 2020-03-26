@@ -3,7 +3,10 @@ import axios from "axios";
 const Employee = () =>{
 
 const [employee, setEmployee] = useState([])
-   
+const [search, setSearch] = useState("")
+
+const employeeArr =[]
+
     
  const fetchEmployee = async () =>{
 
@@ -15,34 +18,26 @@ const [employee, setEmployee] = useState([])
 setEmployee(response.data);
 
 console.log(response.data)
+console.log(employee)
+
+employeeArr.push(employee)
 
  };   
     
  useEffect(()=>{
     fetchEmployee();
-    console.log(employee)
  },[])
  
-//  fetch('https://jsonplaceholder.typicode.com/users')
-//     .then(response => response.json())
-//     .then(json => {
-        
-//         // for(var i=0; i<json.length; i++){
-
-//         //     employees.push(json[i])
-//         // }
-
-//         // console.log(employees)
-
-//         setEmployee([json])
-//         console.log(employee)
-        
-//     })
 
     return (
-        
+
+   
         <div>
-            <h1>{employee.length}</h1>
+            
+            <ul>{employee.map(record => <li>{record.name}</li>)}</ul>
+        
+            {/* <input type="submit" onClick={handleFormSubmit}></input> */}
+            <h1>{employee.name}</h1>
             <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -55,7 +50,7 @@ console.log(response.data)
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>{employee.name[0]}</td>
+      <td>{employee.name}</td>
       <td></td>
       <td></td>
     </tr>

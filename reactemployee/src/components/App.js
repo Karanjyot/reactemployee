@@ -5,37 +5,22 @@ import SearchBox from "./SearchBox";
 
 
 
-// const App = () =>{
-
-
-    
-//     return(
-//         <div>
-//         <h1>hello world</h1>
-//         <Employee />
-//         </div>
-
-      
-//     )
-// };
-
-
 class App extends Component{
 
     state ={
         employees: [{
             id: 1,
-            name: "karanjyot",
-            age: "26"
+            name: "Lebron",
+            age: "40"
         },
         {
             id: 2,
-            name: "david",
-            age: "20"
+            name: "Jordan",
+            age: "50"
         },
         {
             id: 3,
-            name: "mike",
+            name: "Kawhi",
             age: "200"
         },
     ],
@@ -53,9 +38,10 @@ render(){
     })
     return(
         <div>
-            <h1>dogs</h1>
-            <UserList filteredEmployees={filteredEmployees} sortBy={this.sortBy} />
+            <h1>Employees</h1>
             <SearchBox handleInput={this.handleInput}/>
+            <UserList filteredEmployees={filteredEmployees} sortBy={this.sortBy} />
+          
         </div>
     )
 }

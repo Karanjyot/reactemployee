@@ -12,7 +12,7 @@ function UserList(props){
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col"><button onClick ={()=> props.sortBy("name")}>Full Name</button></th>
+      <th scope="col">Name</th>
       <th scope="col">Age</th>
     </tr>
   </thead>
